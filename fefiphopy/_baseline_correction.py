@@ -7,7 +7,7 @@ Created on Thu Oct 10 16:35:24 2019
 """
 
 #import numpy as np
-#import pandas as pd 
+#import pandas as pd
 #import matplotlib.pyplot as plt
 #import scipy.stats as stats
 #from scipy import misc
@@ -16,19 +16,21 @@ Created on Thu Oct 10 16:35:24 2019
 #from scipy.sparse import csc_matrix, eye, diags
 #from scipy.sparse.linalg import spsolve
 
+# credit needs to bed added to the original authors of these functions and methods
+
 def WhittakerSmooth(x,w,lambda_,differences=1):
     import numpy as np
     from scipy.sparse import csc_matrix, eye, diags
     from scipy.sparse.linalg import spsolve
     '''
     Penalized least squares algorithm for background fitting
-    
+
     input
         x: input data (i.e. chromatogram of spectrum)
         w: binary masks (value of the mask is zero if a point belongs to peaks and one otherwise)
         lambda_: parameter that can be adjusted by user. The larger lambda is,  the smoother the resulting background
         differences: integer indicating the order of the difference of penalties
-    
+
     output
         the fitted background vector
     '''
@@ -44,15 +46,15 @@ def WhittakerSmooth(x,w,lambda_,differences=1):
     return np.array(background)
 
 def airPLS(x, lambda_=100, porder=1, itermax=15):
-    import numpy as np 
+    import numpy as np
     '''
     Adaptive iteratively reweighted penalized least squares for baseline fitting
-    
+
     input
         x: input data (i.e. chromatogram of spectrum)
         lambda_: parameter that can be adjusted by user. The larger lambda is,  the smoother the resulting background, z
         porder: adaptive iteratively reweighted penalized least squares for baseline fitting
-    
+
     output
         the fitted background vector
     '''
@@ -67,11 +69,6 @@ def airPLS(x, lambda_=100, porder=1, itermax=15):
             break
         w[d>=0]=0 # d>0 means that this point is part of a peak, so its weight is set to 0 in order to ignore it
         w[d<0]=np.exp(i*np.abs(d[d<0])/dssn)
-        w[0]=np.exp(i*(d[d<0]).max()/dssn) 
+        w[0]=np.exp(i*(d[d<0]).max()/dssn)
         w[-1]=w[0]
     return z
-
-        
- 
-        
-        
