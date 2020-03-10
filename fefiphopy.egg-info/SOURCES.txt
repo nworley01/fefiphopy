@@ -1,0 +1,12 @@
+README.md
+setup.py
+fefiphopy/__init__.py
+fefiphopy/_baseline_correction.py
+fefiphopy/_get_data.py
+fefiphopy/_methods.py
+fefiphopy/_smooth.py
+fefiphopy/_steps.py
+fefiphopy.egg-info/PKG-INFO
+fefiphopy.egg-info/SOURCES.txt
+fefiphopy.egg-info/dependency_links.txt
+fefiphopy.egg-info/top_level.txt

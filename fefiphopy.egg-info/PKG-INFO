@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: fefiphopy
+Version: 0.0.2
+Summary: A package for cleaning and analyzing fiber photomertry data.
+Home-page: https://github.com/nworley01/fefiphopy
+Author: Nicholas Worley
+Author-email: nworley01@yahoo.com
+License: UNKNOWN
+Description: # fefiphopy
+        
+        
+        *This package provides functions for cleaning and analyzing fiber photometry data.*
+        
+         
+        It focuses mainly on the following steps:
+        1. Smoothing the raw data
+        2. Correcting Baseline
+        3. Standardizing signals
+        4. Scaling isosbestic signal
+        5. Calculating dF/F
+        
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
