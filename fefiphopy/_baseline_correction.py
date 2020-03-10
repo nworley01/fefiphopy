@@ -4,6 +4,7 @@
 Created on Thu Oct 10 16:35:24 2019
 
 @author: worley
+fefiphopy 0.0.3
 """
 
 #import numpy as np
