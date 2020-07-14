@@ -35,7 +35,9 @@ def _help():
           'z_score()\n',
           'scale_Isos()\n',
           'calc_dF_F()\n',
-          'butter_lowpass_filter()\n'
-          'butter_highpass_filter()\n'
-          'airPLS()\n'
+          'butter_lowpass_filter()\n',
+          'butter_highpass_filter()\n',
+          'airPLS()\n',
+          'dFF_martian()\n',
+          'dFF_generic()\n'
           )

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: fefiphopy
-Version: 0.0.2
+Version: 0.0.3
 Summary: A package for cleaning and analyzing fiber photomertry data.
 Home-page: https://github.com/nworley01/fefiphopy
 Author: Nicholas Worley
