@@ -5,7 +5,7 @@
 
 ## Installation:
 
-> pip install fefiphopy
+`pip install fefiphopy`
 
 It focuses mainly on the following steps:
 1. Smoothing the raw data
