@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 '''
-fefiphopy version 0.0.2
+fefiphopy version 0.0.3
 © N. Worley
 https://github.com/NWorley01/FeFiPhoPy
 '''
+
 
 def z_score(x):
     """
@@ -11,6 +12,7 @@ def z_score(x):
     """
     import scipy.stats as stats
     return stats.zscore(x)
+
 
 def scale_Isos(Isos, Gcamp):
     """
@@ -21,12 +23,14 @@ def scale_Isos(Isos, Gcamp):
     scaled_Isos = Isos*slope + intercept
     return scaled_Isos
 
+
 def calc_dF_F(Ft, Fo):
     """
     Takes inputs Ft and Fo and returns dF/F
     """
     dF_F = (Ft-Fo)/Fo
     return(dF_F)
+
 
 def _help():
     print('The following functions are available:\n',

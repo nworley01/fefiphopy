@@ -5,6 +5,7 @@ fefiphopy version 0.0.2
 https://github.com/NWorley01/FeFiPhoPy
 '''
 
+
 def running_mean(x, N):
     """
     Smooths the data using the running mean.
@@ -19,17 +20,19 @@ def running_mean(x, N):
     """
     import numpy as np
     import pandas as pd
-    x_smoothed  = np.array(x.rolling(window=N).mean()).reshape(len(x),1)
+    x_smoothed = np.array(x.rolling(window=N).mean()).reshape(len(x), 1)
     return x_smoothed
 
 
 def butter_lowpass(cutoff, fs, order=5):
-    from scipy.signal import butter, lfilter, filtfilt, freqz, detrend, correlate, find_peaks
+    from scipy.signal import butter, lfilter, filtfilt, freqz
+    from scipy.signal import detrend, correlate, find_peaks
     from scipy.fftpack import fft
     nyq = 0.5 * fs
     normal_cutoff = cutoff / nyq
     b, a = butter(order, normal_cutoff, btype='low', analog=False)
     return b, a
+
 
 def butter_lowpass_filter(data, cutoff, fs, order=5):
     """
@@ -46,12 +49,14 @@ def butter_lowpass_filter(data, cutoff, fs, order=5):
     y = lfilter(b, a, data)
     return y
 
+
 def butter_highpass(cutoff, fs, order=5):
     from scipy.signal import butter
     nyq = 0.5 * fs
     normal_cutoff = cutoff / nyq
     b, a = signal.butter(order, normal_cutoff, btype='high', analog=False)
     return b, a
+
 
 def butter_highpass_filter(data, cutoff, fs, order=5):
     """
