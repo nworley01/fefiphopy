@@ -109,20 +109,24 @@ def dFF_generic(data, signal='Gcamp', reference='Isosbestic',
         data: pandas dataframe containing original data,
               new columns with intermediate calculations, and dFF_signal
     """
+
+    from ._steps import scale_Isos
+    from ._smooth import butter_lowpass_filter
     # filter signals using Butteworth High Pass filter
-    data['filt_%s' % signal] = fp.butter_lowpass_filter(df.Gcamp, freq,
+    data['filt_%s' % signal] = butter_lowpass_filter(data[signal], freq,
                                                         sample_rate,
-                                                        order=filter_order)[1220:]
-    data['filt_%s' % reference] = fp.butter_lowpass_filter(df.Isosbestic,
-                                                           freq, 1220,
-                                                           order=5)[1220:]
+                                                        order=filter_order)
+    data['filt_%s' % reference] = butter_lowpass_filter(data[reference],
+                                                           freq, sample_rate,
+                                                           order=5)
 
     # fit the reference to signal using least squares linear regression
-    data['scaled_%s' % reference] = fp.scale_Isos(data['rm_%s' % reference], data['filt_%s' % signal])
+    data['scaled_%s' % reference] = scale_Isos(data['filt_%s' % reference],
+                                                  data['filt_%s' % signal])
 
     # caluclates dF/F as (filter_signal-scaled_reference)/scaled_reference
     data['dFF_%s' % signal] = ((data['filt_%s' % signal]
-                               - data['scaled_%s' % reference])
+                                - data['scaled_%s' % reference])
                                / data['scaled_%s' % reference])
 
     # returns dataframe with calculations in new columns
@@ -157,7 +161,7 @@ def dFF_runningmean(data, rm_window, signal='Rcamp', freq=12,
     # filter signals using Butteworth High Pass filter
     data['filt_%s' % signal] = fp.butter_lowpass_filter(df.Gcamp, freq,
                                                         sample_rate,
-                                                        order=filter_order)[1220:]
+                                                        order=filter_order)
 
     # calculate running mean to use as reference
     data['rm_%s' % signal] = running_mean(data['filt_%s' % signal], rm_window)
