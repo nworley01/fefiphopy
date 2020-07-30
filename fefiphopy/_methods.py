@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-fefiphopy version 0.0.3
+fefiphopy version 0.0.4
 © N. Worley
 https://github.com/NWorley01/fefiphopy
 '''

@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="fefiphopy", 
-    version="0.0.3",
+    name="fefiphopy",
+    version="0.0.4",
     author="Nicholas Worley",
     author_email="nworley01@yahoo.com",
     description="A package for cleaning and analyzing fiber photomertry data.",

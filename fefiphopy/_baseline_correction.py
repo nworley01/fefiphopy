@@ -1,11 +1,9 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Oct 10 16:35:24 2019
-
-@author: worley
-fefiphopy 0.0.3
-"""
+'''
+fefiphopy version 0.0.4
+© N. Worley
+https://github.com/NWorley01/FeFiPhoPy
+'''
 
 # import numpy as np
 # import pandas as pd
